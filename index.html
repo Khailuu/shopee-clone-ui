@@ -1,11 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shopee Clone</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section  -->
+    <header class="header">
+      <div class="logo">Shopee</div>
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Tìm sản phẩm, thương hiệu..."
+          class="search-box"
+        />
+      </div>
+      <div class="cart">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+    </header>
+    <!-- Banner Section  -->
+    <section class="banner">
+      <img id="banner-image" src="./imgs/banner1.png" alt="Banner Shopee" />
+    </section>
+    <!-- Category Section  -->
+    <section class="category-section">
+      <h2>Danh mục</h2>
+      <div class="categories">
+        <div class="category-item">
+          <img src="./imgs/manclothes.jpeg" alt="Thời trang nam" />
+          <p>Thời trang nam</p>
+        </div>
+        <div class="category-item">
+          <img src="./imgs/electronics.jpeg" alt="Thiết bị điện tử" />
+          <p>Thiết bị điện tử</p>
+        </div>
+        <div class="category-item">
+          <img src="./imgs/baby.jpeg" alt="Mẹ và bé" />
+          <p>Mẹ và bé</p>
+        </div>
+        <div class="category-item">
+          <img src="./imgs/home.jpeg" alt="Nhà cửa đời sống" />
+          <p>Nhà cửa & Đời sống</p>
+        </div>
+        <div class="category-item">
+          <img src="./imgs/beauty.jpeg" alt="Làm đẹp" />
+          <p>Làm đẹp</p>
+        </div>
+        <div class="category-item">
+          <img src="./imgs/sport.jpeg" alt="Thể thao" />
+          <p>Thể thao</p>
+        </div>
+      </div>
+    </section>
+    <!-- Flash Sale Section  -->
+    <section class="flash-sale">
+      <div class="flash-sale-header">
+        <h2>🔥 FLASH SALE</h2>
+        <div class="countdown" id="countdown">00:00:00</div>
+      </div>
+      <div class="flash-products"></div>
+    </section>
+    <!-- Suggestion Section  -->
+    <section class="suggestion-section">
+      <h2>🛍️ Gợi ý hôm nay</h2>
+      <div class="product-grid">
+        <!-- JS sẽ render các sản phẩm ở đây -->
+      </div>
+    </section>
+  </body>
+  <script src="./index.js"></script>
+  <script type="module" src="./main.js"></script>
 </html>
