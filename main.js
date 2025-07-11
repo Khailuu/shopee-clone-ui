@@ -21,4 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn.addEventListener("click", () => {
     cartModal.classList.add("hidden");
   });
+
+  renderProductGrid(".product-grid"); 
+
+  const searchBox = document.querySelector(".search-box");
+
+  searchBox.addEventListener("input", (e) => {
+    const keyword = e.target.value;
+    renderProductGrid(".product-grid", keyword); 
+  });
 });

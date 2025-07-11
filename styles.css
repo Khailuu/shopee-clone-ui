@@ -9,6 +9,11 @@ body {
 }
 
 .header {
+  position: fixed; 
+  top: 0;           
+  left: 0;
+  width: 100%;
+  z-index: 999;     
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,6 +21,7 @@ body {
   padding: 12px 24px;
   color: white;
 }
+
 
 .logo {
   font-size: 24px;

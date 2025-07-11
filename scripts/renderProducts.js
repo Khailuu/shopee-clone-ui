@@ -1,30 +1,33 @@
 import { products } from "./data.js";
-import { addToCart } from "./cart.js";
 
-export function renderProductGrid(containerSelector) {
-  const container = document.querySelector(containerSelector);
+export function renderProductGrid(selector, keyword = "") {
+  const container = document.querySelector(selector);
+  if (!container) return;
+
+  const filtered = keyword
+    ? products.filter((p) =>
+        p.name.toLowerCase().includes(keyword.toLowerCase())
+      )
+    : products;
+
   container.innerHTML = "";
 
-  products.forEach((item) => {
-    const card = document.createElement("div");
-    card.className = "product-card";
+  if (filtered.length === 0) {
+    container.innerHTML = "<p>Không tìm thấy sản phẩm nào.</p>";
+    return;
+  }
 
-    card.innerHTML = `
-      <img src="${item.image}" alt="${item.name}" />
-      <p class="product-name">${item.name}</p>
-      <p class="product-price">₫${item.price.toLocaleString()}</p>
-      <p class="product-sold">Đã bán: ${item.sold}</p>
-      <button class="add-to-cart" data-id="${item.id}">🛒 Thêm vào giỏ</button>
+  filtered.forEach((product) => {
+    const div = document.createElement("div");
+    div.classList.add("product-card");
+
+    div.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" />
+      <h3>${product.name}</h3>
+      <p>₫${product.price.toLocaleString()}</p>
+      <button data-id="${product.id}" class="add-to-cart">🛒 Thêm vào giỏ</button>
     `;
 
-    container.appendChild(card);
-  });
-
-  // Gắn sự kiện cho tất cả nút
-  container.querySelectorAll(".add-to-cart").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const id = parseInt(e.target.dataset.id);
-      addToCart(id);
-    });
+    container.appendChild(div);
   });
 }
