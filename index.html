@@ -21,14 +21,24 @@
           class="search-box"
         />
       </div>
-      <div class="cart">
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
+      <div class="cart">🛒 (0)</div>
     </header>
+
+    <!-- Giỏ hàng Modal -->
+    <div id="cart-modal" class="cart-modal hidden">
+      <div class="cart-modal-content">
+        <h3>Giỏ hàng</h3>
+        <ul id="cart-items"></ul>
+        <p id="cart-total">Tổng tiền: ₫0</p>
+        <button id="close-cart">Đóng</button>
+      </div>
+    </div>
+
     <!-- Banner Section  -->
     <section class="banner">
       <img id="banner-image" src="./imgs/banner1.png" alt="Banner Shopee" />
     </section>
+
     <!-- Category Section  -->
     <section class="category-section">
       <h2>Danh mục</h2>
@@ -59,6 +69,7 @@
         </div>
       </div>
     </section>
+
     <!-- Flash Sale Section  -->
     <section class="flash-sale">
       <div class="flash-sale-header">
@@ -67,6 +78,7 @@
       </div>
       <div class="flash-products"></div>
     </section>
+
     <!-- Suggestion Section  -->
     <section class="suggestion-section">
       <h2>🛍️ Gợi ý hôm nay</h2>
@@ -74,7 +86,9 @@
         <!-- JS sẽ render các sản phẩm ở đây -->
       </div>
     </section>
+
+    <!-- Script -->
+    <script src="./index.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
-  <script src="./index.js"></script>
-  <script type="module" src="./main.js"></script>
 </html>
